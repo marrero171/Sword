@@ -27,21 +27,28 @@ if (keyCrouch) and (hsp !=0)
 
 	}
 	//animations
-	sprite_index = sPlayerCW
-	image_xscale = sign(hsp)
+	sprite_index = sPlayerCW;
+	
+	//image_xscale = sign(hsp);
 }
 }
+
+
 if (hsp !=0) and (!keyCrouch)
 {
 	hsp_walk = 4;
 	sprite_index= sPlayer;
-	state = PLAYERSTATE.FREE
+	state = PLAYERSTATE.FREE;
+	
 }
-if (hsp = 0) and (keyCrouch)
+else if (hsp = 0) and (keyCrouch)
 {
-	sprite_index = sPlayerC
-	state= PLAYERSTATE.FREE;
+	state= PLAYERSTATE.CROUCH;
+	sprite_index = sPlayerC;
+	image_index = 2;
 }
+
+
 
 
 

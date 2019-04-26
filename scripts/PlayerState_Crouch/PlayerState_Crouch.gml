@@ -42,7 +42,7 @@ if (animation_end())
 if (!keyCrouch)
 {
 	state = PLAYERSTATE.FREE
-
+	
 }
 if (keyCrouch) and (hsp !=0)
 {
@@ -60,4 +60,9 @@ else
 }
 
 	
+}
+switch (5){
+	case "CCrouch":{
+	
+	}
 }
