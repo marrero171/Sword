@@ -99,8 +99,11 @@ else
 }
 
 if (keyAttack) state = PLAYERSTATE.ATTACK_SLASH
-if (keyCrouch) state = PLAYERSTATE.CROUCH;
-if (keyCrouch) and (hsp !=0) 
+if (keyCrouch) and (onground)
+{
+	state = PLAYERSTATE.CROUCH;
+}
+if (keyCrouch) and (hsp !=0) and (onground)
 {
 	hsp_walk = 1.5;
 state = PLAYERSTATE.CRAWL;

@@ -1,5 +1,5 @@
-hsp = random_range(-1,1);
-vsp = random_range(-1,-3);
+hsp = 0
+vsp = 0
 grv = 0.3;
 done = 0;
 

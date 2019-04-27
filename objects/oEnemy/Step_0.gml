@@ -46,28 +46,19 @@ else
 		sprite_index = sEnemyR;
 	}
 }
-if (hsp != 0) image_xscale = sign(hsp);
+if (hsp != 0) image_xscale = sign(hsp) * size;
+image_yscale = size;
 #endregion
 }
-if (state == ENEMYSTATE.DEAD)
-{
-#region
-	
-	
-instance_destroy();
-	
 
-#endregion
-}
+
 if (state == ENEMYSTATE.HIT)
 {
 	#region
-	EnemyHit = Enemyhp-1;
 if (EnemyHit)
 {
  sprite_index = sEnemyHit;
  image_speed = 1;
- walksp=0;
 }
 if (animation_end())
 {
@@ -79,11 +70,17 @@ if (Enemyhp <= 0)
 }
 	#endregion
 }
-if (state = ENEMYSTATE.DEAD)
+if (state == ENEMYSTATE.DEAD)
 {
-	instance_create_layer(x,y,layer,oEnemyD)
-	
-	
+
+	with (instance_create_layer(x,y,layer,oEnemyD))
+	{
+	direction = other.hitfrom
+	hsp = lengthdir_x (3,direction);
+	vsp = lengthdir_y (3,direction)-2;
+	if (sign(hsp) !=0) image_xscale = sign(hsp) * other.size
+	image_yscale = other.size;
+	}
 	instance_destroy()
 	
 }

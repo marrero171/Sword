@@ -1,8 +1,4 @@
-if (!onground)
-{
-state = PLAYERSTATE.FREE;	
-}
-else
+
 if (keyCrouch) and (hsp !=0)
 {
 { 
